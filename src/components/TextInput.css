@@ -1,0 +1,57 @@
+.text-input-container {
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    transition: all var(--transition-base);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.text-input-container:hover {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-md);
+}
+
+.text-input-label {
+    display: block;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+    color: var(--color-text-primary);
+}
+
+.text-input {
+    width: 100%;
+    min-height: 200px;
+    padding: var(--space-md);
+    background: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    resize: vertical;
+    transition: all var(--transition-base);
+}
+
+.text-input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.text-input-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--space-sm);
+}
+
+.char-count {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+}

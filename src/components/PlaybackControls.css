@@ -1,0 +1,95 @@
+.playback-controls {
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+    animation: fadeIn 0.5s ease-out 0.3s backwards;
+}
+
+.controls-wrapper {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    margin-bottom: var(--space-md);
+}
+
+.control-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xl);
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: var(--radius-full);
+    color: white;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+    min-width: 120px;
+    justify-content: center;
+}
+
+.control-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.control-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.play-btn {
+    background: var(--gradient-primary);
+}
+
+.pause-btn {
+    background: var(--gradient-secondary);
+}
+
+.stop-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+}
+
+.control-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: var(--radius-full);
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: var(--radius-full);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .controls-wrapper {
+        flex-direction: column;
+    }
+
+    .control-btn {
+        width: 100%;
+    }
+}
