@@ -1,0 +1,72 @@
+.ad-placeholder {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    overflow: hidden;
+}
+
+.ad-placeholder:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ad-content {
+    text-align: center;
+    width: 100%;
+}
+
+.ad-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-xs);
+    font-weight: 500;
+}
+
+.ad-info {
+    color: var(--color-text-secondary);
+}
+
+.ad-placeholder-text {
+    font-size: var(--font-size-sm);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.ad-size {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+}
+
+/* Position-specific styles */
+.ad-header {
+    margin-bottom: var(--space-lg);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.ad-sidebar {
+    margin-bottom: var(--space-lg);
+    animation: fadeIn 0.5s ease-out 0.2s backwards;
+}
+
+.ad-footer {
+    margin-top: var(--space-lg);
+    animation: fadeIn 0.5s ease-out 0.3s backwards;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .ad-placeholder {
+        min-height: 60px !important;
+    }
+
+    .ad-placeholder-text {
+        font-size: var(--font-size-xs);
+    }
+}

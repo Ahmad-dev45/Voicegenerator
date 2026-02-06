@@ -1,8 +1,13 @@
 import './VoiceSelector.css';
 
-function VoiceSelector({ voices, selectedVoice, onVoiceChange }) {
+function VoiceSelector({ voices, selectedVoice, onVoiceChange, languageFilter }) {
+    // Filter voices by language if filter is active
+    const filteredVoices = languageFilter === 'all'
+        ? voices
+        : voices.filter(v => v.lang.startsWith(languageFilter));
+
     // Group voices by language
-    const groupedVoices = voices.reduce((acc, voice) => {
+    const groupedVoices = filteredVoices.reduce((acc, voice) => {
         const lang = voice.lang || 'Unknown';
         if (!acc[lang]) {
             acc[lang] = [];
@@ -16,7 +21,7 @@ function VoiceSelector({ voices, selectedVoice, onVoiceChange }) {
     return (
         <div className="voice-selector-container glass">
             <label htmlFor="voice-select" className="voice-selector-label">
-                Select Voice
+                Select Voice {languageFilter !== 'all' && `(${filteredVoices.length} available)`}
             </label>
             <select
                 id="voice-select"
